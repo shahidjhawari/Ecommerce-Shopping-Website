@@ -85,6 +85,7 @@
     <script src="mail/contact.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
-</body>
-</html>
+    <script src="js/own.js"></script>
+    </body>
+
+    </html>
