@@ -1,3 +1,4 @@
+<?php require('top.php'); ?>
 <!-- Carousel Start -->
     <div class="container-fluid mb-3">
         <div class="row px-xl-5">
@@ -773,4 +774,5 @@
             </div>
         </div>
     </div>
-    <!-- Vendor End -->
+<!-- Vendor End -->
+<?php require('footer.php'); ?>
