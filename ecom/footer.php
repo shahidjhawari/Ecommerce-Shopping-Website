@@ -86,6 +86,6 @@
 
     <!-- Template Javascript -->
     <script src="js/own.js"></script>
+    <script src="js/main.js"></script>
     </body>
-
     </html>
