@@ -1,3 +1,12 @@
+<?php
+require('connection.inc.php');
+require('functions.inc.php');
+$cat_res=mysqli_query($con,"select * from categories where status=1 order by categories asc");
+$cat_arr=array();
+while($row=mysqli_fetch_assoc($cat_res)){
+	$cat_arr[]=$row;	
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -122,15 +131,13 @@
                                 <a href="" class="dropdown-item">Baby's Dresses</a>
                             </div>
                         </div>
-                        <a href="" class="nav-item nav-link">Shirts</a>
-                        <a href="" class="nav-item nav-link">Jeans</a>
-                        <a href="" class="nav-item nav-link">Swimwear</a>
-                        <a href="" class="nav-item nav-link">Sleepwear</a>
-                        <a href="" class="nav-item nav-link">Sportswear</a>
-                        <a href="" class="nav-item nav-link">Jumpsuits</a>
-                        <a href="" class="nav-item nav-link">Blazers</a>
-                        <a href="" class="nav-item nav-link">Jackets</a>
-                        <a href="" class="nav-item nav-link">Shoes</a>
+                        <?php
+							foreach($cat_arr as $list){
+								?>
+								<a href="categories.php?id=<?php echo $list['id']?>" class="nav-item nav-link"><?php echo $list['categories']?></a>
+							<?php
+							}
+						?>
                     </div>
                 </nav>
             </div>
