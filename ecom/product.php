@@ -76,13 +76,38 @@ if(isset($_GET['id'])){
                 <div class="d-flex align-items-center mb-4 pt-2">
                     <!-- Add your quantity input and Add to Cart button here -->
                     <div class="input-group quantity mr-3" style="width: 130px;">
-                        <!-- Add your quantity input fields and buttons here -->
+                    <div class="input-group-btn">
+                                <button class="btn btn-primary btn-minus">
+                                    <i class="fa fa-minus"></i>
+                                </button>
+                            </div>
+                            <input type="text" class="form-control bg-secondary border-0 text-center" value="1">
+                            <div class="input-group-btn">
+                                <button class="btn btn-primary btn-plus">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
                     </div>
                     <a class="btn btn-primary px-3" href="#">Add To Cart</a>
                 </div>
-
                 <!-- Add your social media sharing buttons here if needed -->
-
+                <div class="d-flex pt-2">
+                        <strong class="text-dark mr-2">Share on:</strong>
+                        <div class="d-inline-flex">
+                            <a class="text-dark px-2" href="">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="text-dark px-2" href="">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a class="text-dark px-2" href="">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a class="text-dark px-2" href="">
+                                <i class="fab fa-pinterest"></i>
+                            </a>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
@@ -90,7 +115,6 @@ if(isset($_GET['id'])){
 </div>
 <!-- Shop Detail End -->
 
-    <!-- Shop Detail End -->
 
 
     <!-- Products Start -->
