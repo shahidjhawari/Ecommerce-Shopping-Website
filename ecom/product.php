@@ -68,7 +68,7 @@ if(isset($_GET['id'])){
                     </div>
                     <small class="pt-1">(99 Reviews)</small>
                 </div>
-                <h3 class="font-weight-semi-bold mb-4"><?php echo $get_product['0']['price']?></h3>
+                <h3 class="font-weight-semi-bold mb-4">Rs.<?php echo $get_product['0']['price']?></h3>
                 <p class="mb-4"><?php echo $get_product['0']['short_desc']?></p>
 
                 <!-- Add your size and color selection logic here if needed -->
