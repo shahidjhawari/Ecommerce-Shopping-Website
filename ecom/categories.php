@@ -27,7 +27,7 @@ if (isset($_GET['id']) && $_GET['id'] != '') {
         <?php
         // Assuming $get_product is an array containing product information
         if (empty($get_product)) {
-            echo '<p class="text-center">Result not found</p>';
+            echo '<p class="text-center">Products not found</p>';
         } else {
             foreach ($get_product as $list) {
         ?>
