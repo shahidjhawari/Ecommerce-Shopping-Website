@@ -1,13 +1,29 @@
 <?php require('top.php'); ?>
 
 <style>
-        body {
-            background-color: #f8f9fa;
-        }
+    body {
+        background-color: #f8f9fa;
+    }
+    .container {
+        display: flex;
+        justify-content: space-around;
+        max-width: 800px; /* Adjust the width according to your design */
+        margin: 100px auto;
+    }
+    #loginForm,
+    #registerForm {
+        width: 45%; /* Adjust the width of the forms as needed */
+    }
+    @media (max-width: 767px) {
         .container {
-            max-width: 400px;
-            margin-top: 100px;
+            flex-direction: column; /* Stack forms on top of each other for small screens */
+            align-items: center; /* Center forms horizontally */
         }
+        #loginForm,
+        #registerForm {
+            width: 100%; /* Take up full width on small screens */
+        }
+    }
 </style>
 
 <div class="container">
@@ -49,5 +65,6 @@
         <button type="submit" class="btn btn-primary btn-block">Register</button>
     </form>
 </div>
+
 
 <?php require('footer.php'); ?>
