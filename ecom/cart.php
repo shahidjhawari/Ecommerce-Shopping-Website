@@ -48,7 +48,7 @@
                                 <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" id="<?php echo $key?>qty" value="<?php echo $qty?>" readonly>
                             </div>
                         </td>
-                        <td class="align-middle"><?php echo $qty*$price?></td>
+                        <td class="align-middle">Rs.<?php echo $qty*$price?></td>
                         <td class="align-middle"><a href="javascript:void(0)" onclick="manage_cart('<?php echo $key?>','remove')" class="btn btn-sm btn-danger"><i class="fa fa-times"></i></a></td>
                     </tr>
                     <?php } } ?>
