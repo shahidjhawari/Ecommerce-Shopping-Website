@@ -45,17 +45,7 @@
                         <td class="align-middle">Rs.<?php echo $price?></td>
                         <td class="align-middle">
                             <div class="input-group quantity mx-auto" style="width: 100px;">
-                                <div class="input-group-btn">
-                                    <a class="btn btn-sm btn-primary btn-minus" href="javascript:void(0)" onclick="manage_cart('<?php echo $key?>','update')">
-                                        <i class="fa fa-minus"></i>
-                                    </a>
-                                </div>
-                                <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" id="<?php echo $key?>qty" value="<?php echo $qty?>">
-                                <div class="input-group-btn">
-                                    <a class="btn btn-sm btn-primary btn-plus" href="javascript:void(0)" onclick="manage_cart('<?php echo $key?>','update')">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </div>
+                                <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" id="<?php echo $key?>qty" value="<?php echo $qty?>" readonly>
                             </div>
                         </td>
                         <td class="align-middle"><?php echo $qty*$price?></td>
