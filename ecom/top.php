@@ -56,7 +56,12 @@ $totalProduct=$obj->totalProduct();
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="login.php" class="dropdown-item" type="button">Sign in</a>
+                        <?php if(isset($_SESSION['USER_LOGIN'])){
+							echo '<a href="logout.php" class="dropdown-item">Logout</a>';
+						}else{
+							echo '<a href="login.php" class="dropdown-item">Login/Register</a>';
+						}
+						?>
                         </div>
                     </div>
                     <div class="btn-group mx-2">
