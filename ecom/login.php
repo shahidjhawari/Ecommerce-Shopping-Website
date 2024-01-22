@@ -28,17 +28,17 @@
 
 <div class="container">
     <!-- Login Form -->
-    <form id="loginForm">
+    <form id="loginForm" method="post">
         <h2 class="text-center">Login</h2>
         <div class="form-group">
             <label for="loginEmail">Email address</label>
-            <input type="email" class="form-control" id="loginEmail" placeholder="Enter email" required>
+            <input type="email" class="form-control" name="login_email" id="login_email" placeholder="Enter email" required>
         </div>
         <div class="form-group">
             <label for="loginPassword">Password</label>
-            <input type="password" class="form-control" id="loginPassword" placeholder="Password" required>
+            <input type="password" class="form-control" name="login_password" id="login_password" placeholder="Password" required>
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Login</button>
+        <button type="button" class="btn btn-primary btn-block" onclick="user_login()">Login</button>
     </form>
 
     <hr>
