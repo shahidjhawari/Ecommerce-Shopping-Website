@@ -30,9 +30,19 @@
                     </tr>
                 </thead>
                 <tbody class="align-middle">
+                <?php
+					if(isset($_SESSION['cart'])){
+						foreach($_SESSION['cart'] as $key=>$val){
+						$productArr=get_product($con,'','',$key);
+						$pname=$productArr[0]['name'];
+						$mrp=$productArr[0]['mrp'];
+						$price=$productArr[0]['price'];
+						$image=$productArr[0]['image'];
+						$qty=$val['qty'];
+						?>
                     <tr>
-                        <td class="align-middle"><img src="img/product-1.jpg" alt="" style="width: 50px;"> Product Name</td>
-                        <td class="align-middle">$150</td>
+                        <td class="align-middle"><img src="<?php echo PRODUCT_IMAGE_SITE_PATH.$image?>" alt="" style="width: 50px;"><?php echo $pname?></td>
+                        <td class="align-middle">Rs.<?php echo $price?></td>
                         <td class="align-middle">
                             <div class="input-group quantity mx-auto" style="width: 100px;">
                                 <div class="input-group-btn">
@@ -40,7 +50,7 @@
                                         <i class="fa fa-minus"></i>
                                     </button>
                                 </div>
-                                <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" value="1">
+                                <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" id="<?php echo $key?>qty" value="<?php echo $qty?>">
                                 <div class="input-group-btn">
                                     <button class="btn btn-sm btn-primary btn-plus">
                                         <i class="fa fa-plus"></i>
@@ -48,9 +58,10 @@
                                 </div>
                             </div>
                         </td>
-                        <td class="align-middle">$150</td>
-                        <td class="align-middle"><button class="btn btn-sm btn-danger"><i class="fa fa-times"></i></button></td>
+                        <td class="align-middle">45</td>
+                        <td class="align-middle"><a href="javascript:void(0)" onclick="manage_cart('<?php echo $key?>','remove')" class="btn btn-sm btn-danger"><i class="fa fa-times"></i></a></td>
                     </tr>
+                    <?php } } ?>
                 </tbody>
             </table>
         </div>
