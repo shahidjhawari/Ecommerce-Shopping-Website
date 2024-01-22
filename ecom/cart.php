@@ -46,19 +46,19 @@
                         <td class="align-middle">
                             <div class="input-group quantity mx-auto" style="width: 100px;">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-minus">
+                                    <a class="btn btn-sm btn-primary btn-minus" href="javascript:void(0)" onclick="manage_cart('<?php echo $key?>','update')">
                                         <i class="fa fa-minus"></i>
-                                    </button>
+                                    </a>
                                 </div>
                                 <input type="text" class="form-control form-control-sm bg-secondary border-0 text-center" id="<?php echo $key?>qty" value="<?php echo $qty?>">
                                 <div class="input-group-btn">
-                                    <button class="btn btn-sm btn-primary btn-plus">
+                                    <a class="btn btn-sm btn-primary btn-plus" href="javascript:void(0)" onclick="manage_cart('<?php echo $key?>','update')">
                                         <i class="fa fa-plus"></i>
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </td>
-                        <td class="align-middle">45</td>
+                        <td class="align-middle"><?php echo $qty*$price?></td>
                         <td class="align-middle"><a href="javascript:void(0)" onclick="manage_cart('<?php echo $key?>','remove')" class="btn btn-sm btn-danger"><i class="fa fa-times"></i></a></td>
                     </tr>
                     <?php } } ?>
