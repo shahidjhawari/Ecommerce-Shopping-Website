@@ -69,6 +69,9 @@ if (isset($_POST['submit'])) {
 
 <!-- Checkout Start -->
 <div class="container-fluid">
+<?php 
+	if(isset($_SESSION['USER_LOGIN'])){
+	?>
     <div class="row px-xl-5">
         <div class="col-lg-8">
             <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Billing
@@ -207,6 +210,9 @@ if (isset($_POST['submit'])) {
             </form>
         </div>
     </div>
+    <?php } else {
+        echo '<div class="container"><div class="alert alert-danger">Please login to view your orders.</div></div>';
+    } ?>
 </div>
 <!-- Checkout End -->
 
