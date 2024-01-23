@@ -140,7 +140,7 @@
                         <a href="product.php?id=<?php echo $list['id']?>"><img class="img-fluid w-100" src="<?php echo PRODUCT_IMAGE_SITE_PATH . $list['image'] ?>" alt=""></a>
                     </div>
                     <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="#"><?php echo $list['name'] ?></a>
+                        <a class="h6 text-decoration-none text-truncate" href="product.php?id=<?php echo $list['id']?>"><?php echo $list['name'] ?></a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h5>Rs.<?php echo $list['price'] ?></h5>
                             <h6 class="text-muted ml-2"><del>Rs.<?php echo $list['mrp'] ?></del></h6>

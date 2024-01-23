@@ -53,7 +53,13 @@
                     </tr>
                     <?php } } ?>
                 </tbody>
-            </table>
+            </table>  
+        </div>
+    </div>
+    <div class="row justify-content-end">
+        <div class="col-md-4 mt-3">
+            <a href="<?php echo SITE_PATH?>" class="btn btn-primary btn-sm mr-4"><b>Continue Shopping</b></a>
+            <a href="<?php echo SITE_PATH?>checkout.php" class="btn btn-primary btn-sm"><b>Checkout</b></a>
         </div>
     </div>
 </div>
