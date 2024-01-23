@@ -74,7 +74,7 @@ if (isset($_POST['submit'])) {
             <h5 class="section-title position-relative text-uppercase mb-3"><span class="bg-secondary pr-3">Billing
                     Address</span></h5>
             <div class="bg-light p-30 mb-5">
-                <form action="">
+                <form id="login-form" method="post">
                 <div class="row">
                     <div class="col-md-6 form-group">
                         <label>Full Name</label>
@@ -185,7 +185,7 @@ if (isset($_POST['submit'])) {
                 <div class="bg-light p-30">
                     <div class="form-group">
                         <div class="custom-control custom-radio">
-                            <input type="radio" name="payment_type" class="custom-control-input" id="cod">
+                            <input type="radio" name="payment_type" class="custom-control-input" id="cod" required>
                             <label class="custom-control-label" for="cod">Cash On Delivery</label>
                         </div>
                     </div>
