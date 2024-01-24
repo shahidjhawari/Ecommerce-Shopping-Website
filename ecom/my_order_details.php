@@ -37,7 +37,7 @@ $order_id=get_safe_value($con,$_GET['id']);
           <td><img width="50px" src="<?php echo PRODUCT_IMAGE_SITE_PATH.$row['image']?>"></td>
           <td><?php echo $row['qty']?></td>
           <td>Rs.<?php echo $row['price']?></td>
-          <td>Rs.<?php echo $row['qty']*$row['price']?></td>
+          <td>Rs.<?php echo $row['qty']*$row['price'] + 30?></td>
         </tr>
         <?php } ?>
         <!-- Add more rows as needed -->
