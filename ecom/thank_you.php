@@ -1,4 +1,13 @@
-<?php require('top.php'); ?>
+<?php 
+require('top.php');
+if(!isset($_SESSION['USER_LOGIN'])){
+	?>
+	<script>
+	window.location.href='index.php';
+	</script>
+	<?php
+}
+?>
 
 <div class="container mt-5">
     <div class="row justify-content-center">
