@@ -253,7 +253,7 @@ if(isset($_POST['submit'])){
                     <div class="bg-light p-30">
                         <div class="form-group">
                             <div class="custom-control custom-radio">
-                                <input type="radio" name="payment_type" class="custom-control-input" id="cod" required>
+                                <input type="radio" name="payment_type" value="COD" class="custom-control-input" id="cod" required>
                                 <label class="custom-control-label" for="cod">Cash On Delivery</label>
                             </div>
                         </div>
