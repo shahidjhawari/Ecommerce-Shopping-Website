@@ -16,7 +16,7 @@ if(!isset($_SESSION['USER_LOGIN'])){
             <h1 class="mb-3">Your order has been placed!</h1>
             <p class="lead">Thank you for choosing our services. Your order is confirmed, and we are processing it.</p>
             <p>We will send you an email with further details shortly.</p>
-            <a href="#" class="btn btn-primary mt-3"><b>Track Your Order</b></a>
+            <a href="my_order.php" class="btn btn-primary mt-3"><b>Track Your Order</b></a>
         </div>
     </div>
 </div>
