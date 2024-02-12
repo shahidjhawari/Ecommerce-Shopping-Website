@@ -2,14 +2,14 @@
 require('connection.inc.php');
 require('functions.inc.php');
 require('add_to_cart.inc.php');
-$cat_res=mysqli_query($con,"select * from categories where status=1 order by categories asc");
-$cat_arr=array();
-while($row=mysqli_fetch_assoc($cat_res)){
-	$cat_arr[]=$row;	
+$cat_res = mysqli_query($con, "select * from categories where status=1 order by categories asc");
+$cat_arr = array();
+while ($row = mysqli_fetch_assoc($cat_res)) {
+    $cat_arr[] = $row;
 }
 
-$obj=new add_to_cart();
-$totalProduct=$obj->totalProduct();
+$obj = new add_to_cart();
+$totalProduct = $obj->totalProduct();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,12 +56,12 @@ $totalProduct=$obj->totalProduct();
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
                         <div class="dropdown-menu dropdown-menu-right">
-                        <?php if(isset($_SESSION['USER_LOGIN'])){
-							echo '<a href="logout.php" class="dropdown-item">Logout</a>';
-						}else{
-							echo '<a href="login.php" class="dropdown-item">Login/Register</a>';
-						}
-						?>
+                            <?php if (isset($_SESSION['USER_LOGIN'])) {
+                                echo '<a href="logout.php" class="dropdown-item">Logout</a>';
+                            } else {
+                                echo '<a href="login.php" class="dropdown-item">Login/Register</a>';
+                            }
+                            ?>
                         </div>
                     </div>
                     <div class="btn-group mx-2">
@@ -88,7 +88,7 @@ $totalProduct=$obj->totalProduct();
                     </a>
                     <a href="cart.php" class="btn px-0 ml-2">
                         <i class="fas fa-shopping-cart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;"><?php echo $totalProduct?></span>
+                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;"><?php echo $totalProduct ?></span>
                     </a>
                 </div>
             </div>
@@ -101,13 +101,13 @@ $totalProduct=$obj->totalProduct();
                 </a>
             </div>
             <div class="col-lg-4 col-6 text-left">
-                <form action="">
+                <form action="search.php" method="get">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search for products">
+                        <input type="text" name="str" class="form-control" placeholder="Search for products">
                         <div class="input-group-append">
-                            <span class="input-group-text bg-transparent text-primary">
+                            <button class="input-group-text bg-transparent text-primary" type="submit">
                                 <i class="fa fa-search"></i>
-                            </span>
+                            </button>
                         </div>
                     </div>
                 </form>
@@ -140,12 +140,12 @@ $totalProduct=$obj->totalProduct();
                             </div>
                         </div>
                         <?php
-							foreach($cat_arr as $list){
-								?>
-								<a href="categories.php?id=<?php echo $list['id']?>" class="nav-item nav-link"><?php echo $list['categories']?></a>
-							<?php
-							}
-						?>
+                        foreach ($cat_arr as $list) {
+                        ?>
+                            <a href="categories.php?id=<?php echo $list['id'] ?>" class="nav-item nav-link"><?php echo $list['categories'] ?></a>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </nav>
             </div>
@@ -179,7 +179,7 @@ $totalProduct=$obj->totalProduct();
                             </a>
                             <a href="cart.php" class="btn px-0 ml-3">
                                 <i class="fas fa-shopping-cart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;"><?php echo $totalProduct?></span>
+                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;"><?php echo $totalProduct ?></span>
                             </a>
                         </div>
                     </div>
