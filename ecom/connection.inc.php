@@ -1,6 +1,6 @@
 <?php
 session_start();
-$con=mysqli_connect("localhost","root","","shop6");
+$con=mysqli_connect("localhost","root","","shop7");
 define('SERVER_PATH',$_SERVER['DOCUMENT_ROOT'].'/shop/ecom/');
 define('SITE_PATH','http://127.0.0.1/shop/ecom/');
 
