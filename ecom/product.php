@@ -88,7 +88,7 @@ if(isset($_GET['id'])){
                                 </button>
                             </div>
                     </div>
-                    <a class="btn btn-primary px-3" href="javascript:void(0)" onclick="manage_cart('<?php echo $get_product['0']['id']?>','add')">Add To Cart</a>
+                    <a class="btn btn-primary px-3" href="" onclick="manage_cart('<?php echo $get_product['0']['id']?>','add')">Add To Cart</a>
                 </div>
                 <!-- Add your social media sharing buttons here if needed -->
                 <div class="d-flex pt-2">
