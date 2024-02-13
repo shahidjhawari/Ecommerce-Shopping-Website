@@ -48,6 +48,11 @@ if ($cat_id > 0) {
     exit; // Exit after redirecting
 }
 ?>
+<style>
+    body {
+        overflow: hidden;
+    }
+</style>
 
 
 <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">CATEGORIES</span></h2>
