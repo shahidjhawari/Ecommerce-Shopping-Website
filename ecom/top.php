@@ -2,6 +2,7 @@
 require('connection.inc.php');
 require('functions.inc.php');
 require('add_to_cart.inc.php');
+$wishlist_count = 0;
 $cat_res = mysqli_query($con, "select * from categories where status=1 order by categories asc");
 $cat_arr = array();
 while ($row = mysqli_fetch_assoc($cat_res)) {
@@ -10,6 +11,17 @@ while ($row = mysqli_fetch_assoc($cat_res)) {
 
 $obj = new add_to_cart();
 $totalProduct = $obj->totalProduct();
+
+if (isset($_SESSION['USER_LOGIN'])) {
+    $uid = $_SESSION['USER_ID'];
+
+    if (isset($_GET['wishlist_id'])) {
+        $wid = get_safe_value($con, $_GET['wishlist_id']);
+        mysqli_query($con, "delete from wishlist where id='$wid' and user_id='$uid'");
+    }
+
+    $wishlist_count = mysqli_num_rows(mysqli_query($con, "select product.name,product.image,product.price,product.mrp,wishlist.id from product,wishlist where wishlist.product_id=product.id and wishlist.user_id='$uid'"));
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,14 +94,27 @@ $totalProduct = $obj->totalProduct();
                     </div>
                 </div>
                 <div class="d-inline-flex align-items-center d-block d-lg-none">
-                    <a href="" class="btn px-0 ml-2">
-                        <i class="fas fa-heart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
-                    </a>
-                    <a href="cart.php" class="btn px-0 ml-2">
-                        <i class="fas fa-shopping-cart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;"><?php echo $totalProduct ?></span>
-                    </a>
+                    <?php
+                    if (isset($_SESSION['USER_ID'])) {
+                    ?>
+                        <a href="" class="btn px-0">
+                            <i class="fas fa-heart text-primary"></i>
+                            <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;"><?php echo $wishlist_count ?></span>
+                        </a>
+                        <a href="cart.php" class="btn px-0 ml-3">
+                            <i class="fas fa-shopping-cart text-primary"></i>
+                            <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;"><?php echo $totalProduct ?></span>
+                        </a>
+                    <?php } else { ?>
+                        <a href="" class="btn px-0">
+                            <i class="fas fa-heart text-primary"></i>
+                            <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                        </a>
+                        <a href="cart.php" class="btn px-0 ml-3">
+                            <i class="fas fa-shopping-cart text-primary"></i>
+                            <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                        </a>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -173,14 +198,27 @@ $totalProduct = $obj->totalProduct();
                             <a href="contact.html" class="nav-item nav-link">Contact</a>
                         </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
-                            <a href="" class="btn px-0">
-                                <i class="fas fa-heart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
-                            </a>
-                            <a href="cart.php" class="btn px-0 ml-3">
-                                <i class="fas fa-shopping-cart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;"><?php echo $totalProduct ?></span>
-                            </a>
+                            <?php
+                            if (isset($_SESSION['USER_ID'])) {
+                            ?>
+                                <a href="" class="btn px-0">
+                                    <i class="fas fa-heart text-primary"></i>
+                                    <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;"><?php echo $wishlist_count ?></span>
+                                </a>
+                                <a href="cart.php" class="btn px-0 ml-3">
+                                    <i class="fas fa-shopping-cart text-primary"></i>
+                                    <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;"><?php echo $totalProduct ?></span>
+                                </a>
+                            <?php } else { ?>
+                                <a href="" class="btn px-0">
+                                    <i class="fas fa-heart text-primary"></i>
+                                    <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                                </a>
+                                <a href="cart.php" class="btn px-0 ml-3">
+                                    <i class="fas fa-shopping-cart text-primary"></i>
+                                    <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                                </a>
+                            <?php } ?>
                         </div>
                     </div>
                 </nav>
