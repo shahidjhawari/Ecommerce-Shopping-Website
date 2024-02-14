@@ -152,7 +152,7 @@
                             <small class="fa fa-star text-primary mr-1"></small>
                             <small class="fa fa-star text-primary mr-1"></small>
                             <small>(<?php echo $list['price'] ?>)</small>
-                            <a href="" class="px-3 ml-2" onclick="wishlist_manage('<?php echo $list['id'] ?>','add')"><i class="fas fa-heart"></i></a>
+                            <a href="" class="px-3 ml-1" onclick="wishlist_manage('<?php echo $list['id'] ?>','add')"><i class="fas fa-heart"></i></a>
                         </div>
                     </div>
                 </div>
