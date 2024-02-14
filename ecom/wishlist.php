@@ -43,7 +43,10 @@ $res = mysqli_query($con, "select product.name,product.image,product.price,produ
                     while ($row = mysqli_fetch_assoc($res)) {
                     ?>
                         <tr>
-                            <td class="align-middle"><img src="<?php echo PRODUCT_IMAGE_SITE_PATH . $row['image'] ?>" alt="" style="width: 50px;"><a href="#"><?php echo $row['name'] ?></td>
+                            <td class="align-middle">
+                                <img src="<?php echo PRODUCT_IMAGE_SITE_PATH . $row['image'] ?>" alt="" style="width: 50px;">
+                                <a href="product.php?product_id=<?php echo $row['id'] ?>"><?php echo $row['name'] ?></a>
+                            </td>
                             <td class="align-middle">Rs.<?php echo $row['price'] ?></td>
                             <td class="align-middle"><a href="wishlist.php?wishlist_id=<?php echo $row['id'] ?>" class="btn btn-sm btn-danger"><i class="fa fa-times"></i></a></td>
                         </tr>
@@ -60,5 +63,6 @@ $res = mysqli_query($con, "select product.name,product.image,product.price,produ
     </div>
 </div>
 <!-- Cart End -->
+
 
 <?php require('footer.php') ?>
