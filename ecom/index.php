@@ -103,23 +103,23 @@
     <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">Categories</span></h2>
     <div class="row px-xl-5 pb-3">
         <?php
-            foreach ($cat_arr as $list) {
+        foreach ($cat_arr as $list) {
         ?>
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                <a href="categories.php?id=<?php echo $list['id']?>" class="text-decoration-none">
+                <a href="categories.php?id=<?php echo $list['id'] ?>" class="text-decoration-none">
                     <div class="cat-item d-flex align-items-center mb-4">
                         <div class="overflow-hidden" style="width: 100px; height: 100px;">
                             <img class="img-fluid" src="img/cat-1.jpg" alt="">
                         </div>
                         <div class="flex-fill pl-3">
-                            <h6><?php echo $list['categories']?></h6>
+                            <h6><?php echo $list['categories'] ?></h6>
                             <small class="text-body">100 Products</small>
                         </div>
                     </div>
                 </a>
             </div>
         <?php
-            }
+        }
         ?>
     </div>
 </div>
@@ -137,10 +137,10 @@
             <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
                 <div class="product-item bg-light mb-4">
                     <div class="product-img position-relative overflow-hidden">
-                        <a href="product.php?id=<?php echo $list['id']?>"><img class="img-fluid w-100" src="<?php echo PRODUCT_IMAGE_SITE_PATH . $list['image'] ?>" alt=""></a>
+                        <a href="product.php?id=<?php echo $list['id'] ?>"><img class="img-fluid w-100" src="<?php echo PRODUCT_IMAGE_SITE_PATH . $list['image'] ?>" alt=""></a>
                     </div>
                     <div class="text-center py-4">
-                        <a class="h6 text-decoration-none text-truncate" href="product.php?id=<?php echo $list['id']?>"><?php echo $list['name'] ?></a>
+                        <a class="h6 text-decoration-none text-truncate" href="product.php?id=<?php echo $list['id'] ?>"><?php echo $list['name'] ?></a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h5>Rs.<?php echo $list['price'] ?></h5>
                             <h6 class="text-muted ml-2"><del>Rs.<?php echo $list['mrp'] ?></del></h6>
@@ -152,6 +152,7 @@
                             <small class="fa fa-star text-primary mr-1"></small>
                             <small class="fa fa-star text-primary mr-1"></small>
                             <small>(<?php echo $list['price'] ?>)</small>
+                            <a href="" class="px-3 ml-2" onclick="wishlist_manage('<?php echo $list['id'] ?>','add')"><i class="fas fa-heart"></i></a>
                         </div>
                     </div>
                 </div>
@@ -160,6 +161,7 @@
     </div>
 </div>
 <!-- Products End -->
+
 
 
 <!-- Offer Start -->
