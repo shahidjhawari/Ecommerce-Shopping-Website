@@ -97,7 +97,7 @@ if (isset($_SESSION['USER_LOGIN'])) {
                     <?php
                     if (isset($_SESSION['USER_ID'])) {
                     ?>
-                        <a href="" class="btn px-0">
+                        <a href="wishlist.php" class="btn px-0">
                             <i class="fas fa-heart text-primary"></i>
                             <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;"><?php echo $wishlist_count ?></span>
                         </a>
@@ -106,7 +106,7 @@ if (isset($_SESSION['USER_LOGIN'])) {
                             <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;"><?php echo $totalProduct ?></span>
                         </a>
                     <?php } else { ?>
-                        <a href="" class="btn px-0">
+                        <a href="wishlist.php" class="btn px-0">
                             <i class="fas fa-heart text-primary"></i>
                             <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                         </a>
@@ -201,7 +201,7 @@ if (isset($_SESSION['USER_LOGIN'])) {
                             <?php
                             if (isset($_SESSION['USER_ID'])) {
                             ?>
-                                <a href="" class="btn px-0">
+                                <a href="wishlist.php" class="btn px-0">
                                     <i class="fas fa-heart text-primary"></i>
                                     <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;"><?php echo $wishlist_count ?></span>
                                 </a>
@@ -210,7 +210,7 @@ if (isset($_SESSION['USER_LOGIN'])) {
                                     <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;"><?php echo $totalProduct ?></span>
                                 </a>
                             <?php } else { ?>
-                                <a href="" class="btn px-0">
+                                <a href="wishlist.php" class="btn px-0">
                                     <i class="fas fa-heart text-primary"></i>
                                     <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
                                 </a>
